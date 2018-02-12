@@ -1,0 +1,42 @@
+{% extends "main.html" %}
+{% block content %}	
+{% include "header.html" %}
+<div class="row divider blue">
+		<div class="col-md-12"></div>
+	</div>
+		<center>
+	<div class="row col-md-12">
+		<h1 class="col-md-11">Add Item</h1>
+	</div>
+	<div class="row">
+	<div class="row col-md-11" >
+	
+			<div class="row">
+				<div class="col-md-1"></div>
+					<div class="col-md-10 restaurant-list">
+					<form action ="{{url_for('AddItems')}}" method="POST">
+<p> name : 
+<input type="text" size="25 " name="name"></p>
+<p> description : 
+
+<textarea  name="description"></textarea></p>
+</br>
+<p> Category  : 
+<select name="category_id"></p>
+
+          <option value="" disabled selected>Choose item category</option>
+          {% for cat in category %}
+            <option value="{{ cat.id }}">{{ cat.name }}</option>
+          {% endfor %}
+        </select>
+</br>
+</br>
+<p>_________________________________________</p>
+<input type="submit" name="create">
+</form>	
+					</div>
+	
+</center>
+</body>
+</html>
+{% endblock %}

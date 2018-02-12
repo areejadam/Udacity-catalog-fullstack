@@ -1,0 +1,35 @@
+{% extends "main.html" %}
+{% block content %}	
+			<div class="row top-menu">
+		<div class="col-md-10"></div>
+		<div class="col-md-2 text-right">
+
+			<a href="{{url_for('showLogin')}}">Click Here to Log in </a>
+		</div><h1> Catalog App </h1>
+	</div>
+	<div class="row divider blue">
+		<div class="col-md-12"></div>
+	</div>
+<div class="row banner main">
+		<div class="col-md-1"></div>
+		<div class="col-md-2 padding-none">
+			<h1>{{items.name}}</h1 >
+		
+	</div>
+	<div class="row col-md-12" >
+	
+		
+			<div class="row">
+				<div class="col-md-1"></div>
+					<div class="col-md-10 restaurant-list">
+						<h3>{{items.description}}</h3>
+					</div>
+				<div class="col-md-1"></div>
+
+			</div>
+		</a>
+
+
+
+
+{% endblock %}

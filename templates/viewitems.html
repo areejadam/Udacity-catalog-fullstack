@@ -1,0 +1,63 @@
+{% extends "main.html" %}
+{% block content %}	
+{% include "header.html" %}
+			
+	<div class="row divider blue">
+		<div class="col-md-12"></div>
+	</div>
+	<div class="row banner main">
+		<div class="col-md-1"></div>
+		<div class="col-md-2 padding-none">
+			<h1>Categories</h1 >
+		</div>
+		<div class="col-md-1"></div>
+		<div class="col-md-6 padding-none">
+			<h1><center>{{category.name}}<p> ({{number}} items )</p></center></h1>
+		</div>
+	</div>
+	<div class="row padding-top padding-bottom">
+		<div class="col-md-1"></div>
+		<div class="col-md-10 padding-none">
+			
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+	<div class="row">
+	<div class="row col-md-4" >
+	{% for categor in categories %}
+		<a href = "{{url_for('ShowItems', category_name = categor.name)}}">
+			<div class="row">
+				<div class="col-md-1"></div>
+					<div class="col-md-10 restaurant-list">
+						<h3>{{categor.name}} </h3>
+					</div>
+				<div class="col-md-1"></div>
+
+			</div>
+		</a>
+	{% endfor %}
+
+</div>
+<div class="row col-md-8" >
+	{% for item in items %}
+		<a href = "{{url_for('description', category_name = category.name, item_name=item.name)}}">
+			<div class="row">
+				<div class="col-md-1"></div>
+					<div class="col-md-10 restaurant-list">
+						
+						<center><h3>{{item.name}} <p>( {{item.categories.name}})</p></h3>
+						</center>
+						
+					</div>
+				<div class="col-md-1"></div>
+
+			</div>
+		</a>
+	{% endfor %}
+
+</div>
+
+
+
+</div>
+{% endblock %}
